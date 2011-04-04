@@ -1,17 +1,19 @@
 #
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
+%bcond_without	glade3		# Glade 3 support
 #
 Summary:	Mx Toolkit
+Summary(pl.UTF-8):	Toolkit widgetów Mx
 Name:		mx
-Version:	1.1.9
+Version:	1.1.10
 Release:	1
-License:	LGPL v2
+License:	LGPL v2.1
 Group:		X11/Libraries
 Source0:	http://source.clutter-project.org/sources/mx/1.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	a486b817bef19e017b3e09fe1578b126
+# Source0-md5:	9ae61291dd38a05b6c5b4917905e5de0
 URL:		http://www.clutter-project.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	clutter-devel >= 1.4.0
 BuildRequires:	dbus-glib-devel >= 0.82
@@ -19,7 +21,8 @@ BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	gobject-introspection-devel >= 0.6.4
 BuildRequires:	gtk+2-devel >= 2:2.20.0
 BuildRequires:	gtk-doc >= 1.14
-BuildRequires:	libgladeui-devel >= 3.4.5
+BuildRequires:	intltool >= 0.35.0
+%{?with_glade3:BuildRequires:	libgladeui-devel >= 3.4.5}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel >= 0.9
@@ -32,6 +35,13 @@ interface elements, including buttons, progress bars, scroll bars and
 others. It also implements some standard managers. One other
 interesting feature is the possibility setting style properties from a
 CSS format file.
+
+%description -l pl.UTF-8
+Mx to toolkit widgetów korzystający z biblioteki Clutter,
+udostępniający zbiór podstawowych elementów interfejsów graficznych,
+w tym przyciski, paski postępu, paski przewijania i inne. Implementuje
+także niektórych standardowych zarządców. Interesującą funkcją jest
+możliwość ustawiania właściwości styli poprzz plik w formacie CSS.
 
 %package devel
 Summary:	Header files for mx libraries
@@ -71,6 +81,7 @@ Dokumentacja API bibliotek mx.
 %configure \
 	%{__enable_disable apidocs gtk-doc} \
 	--disable-silent-rules \
+	%{?with_glade3:--with-glade} \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
