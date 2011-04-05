@@ -41,7 +41,7 @@ Mx to toolkit widgetów korzystający z biblioteki Clutter,
 udostępniający zbiór podstawowych elementów interfejsów graficznych,
 w tym przyciski, paski postępu, paski przewijania i inne. Implementuje
 także niektórych standardowych zarządców. Interesującą funkcją jest
-możliwość ustawiania właściwości styli poprzz plik w formacie CSS.
+możliwość ustawiania właściwości styli poprzez plik w formacie CSS.
 
 %package devel
 Summary:	Header files for mx libraries
