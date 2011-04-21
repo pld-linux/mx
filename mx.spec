@@ -6,12 +6,12 @@
 Summary:	Mx Toolkit
 Summary(pl.UTF-8):	Toolkit widgetów Mx
 Name:		mx
-Version:	1.1.10
+Version:	1.1.11
 Release:	1
 License:	LGPL v2.1
 Group:		X11/Libraries
 Source0:	http://source.clutter-project.org/sources/mx/1.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	9ae61291dd38a05b6c5b4917905e5de0
+# Source0-md5:	a5afc20ee8984da665f12736f5837227
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
