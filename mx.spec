@@ -6,16 +6,17 @@
 Summary:	Mx Toolkit
 Summary(pl.UTF-8):	Toolkit widgetów Mx
 Name:		mx
-Version:	1.1.12
+Version:	1.2.1
 Release:	1
 License:	LGPL v2.1
 Group:		X11/Libraries
-Source0:	http://source.clutter-project.org/sources/mx/1.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	0ad5e7696c64a2ced35bdbf977e9cabf
+Source0:	http://source.clutter-project.org/sources/mx/1.2/%{name}-%{version}.tar.xz
+# Source0-md5:	2595a61511f3e354eecd4031f6804ac9
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.50
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	clutter-devel >= 1.4.0
+# clutter-imcontext-0.1, clutter-gesture
 BuildRequires:	dbus-glib-devel >= 0.82
 BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	gobject-introspection-devel >= 0.6.4
@@ -26,7 +27,9 @@ BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	startup-notification-devel >= 0.9
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.2.0
+BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
