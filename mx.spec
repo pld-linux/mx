@@ -3,15 +3,18 @@
 %bcond_without	apidocs		# do not build and package API docs
 %bcond_without	glade3		# Glade 3 support
 #
+%define		vermaj	1.3
+%define		vermin	1
+
 Summary:	Mx Toolkit
 Summary(pl.UTF-8):	Toolkit widgetów Mx
 Name:		mx
-Version:	1.2.1
+Version:	%{vermaj}.%{vermin}
 Release:	1
 License:	LGPL v2.1
 Group:		X11/Libraries
-Source0:	http://source.clutter-project.org/sources/mx/1.2/%{name}-%{version}.tar.xz
-# Source0-md5:	2595a61511f3e354eecd4031f6804ac9
+Source0:	http://source.clutter-project.org/sources/mx/%{vermaj}/%{name}-%{version}.tar.xz
+# Source0-md5:	2059af1030a219d495bb78f4e635161c
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11
