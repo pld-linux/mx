@@ -22,6 +22,8 @@ BuildRequires:	automake >= 1:1.11
 BuildRequires:	clutter-devel >= 1.4.0
 # clutter-imcontext-0.1, clutter-gesture
 BuildRequires:	dbus-glib-devel >= 0.82
+BuildRequires:	gettext-devel
+BuildRequires:	gdk-pixbuf2-devel
 BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	gobject-introspection-devel >= 0.6.4
 BuildRequires:	gtk+2-devel >= 2:2.20.0
