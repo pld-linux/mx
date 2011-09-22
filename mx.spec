@@ -10,12 +10,13 @@ Summary:	Mx Toolkit
 Summary(pl.UTF-8):	Toolkit widgetów Mx
 Name:		mx
 Version:	%{vermaj}.%{vermin}
-Release:	1
+Release:	2
 License:	LGPL v2.1
 Group:		X11/Libraries
 Source0:	http://source.clutter-project.org/sources/mx/%{vermaj}/%{name}-%{version}.tar.xz
 # Source0-md5:	2059af1030a219d495bb78f4e635161c
 URL:		http://www.clutter-project.org/
+Patch0:		gdk-pixbuf.patch
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	clutter-devel >= 1.4.0
@@ -55,6 +56,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek mx
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	clutter-devel >= 1.4.0
+Requires:	gdk-pixbuf2-devel
 Requires:	gtk+2-devel >= 2:2.20.0
 
 %description devel
@@ -77,6 +79,7 @@ Dokumentacja API bibliotek mx.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}

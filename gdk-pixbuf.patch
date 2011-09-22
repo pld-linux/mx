@@ -1,0 +1,8 @@
+--- mx-1.3.1/mx.pc.in.wiget	2011-05-19 13:07:41.000000000 +0200
++++ mx-1.3.1/mx.pc.in	2011-09-22 08:48:10.822371596 +0200
+@@ -8,4 +8,4 @@ Description: An experimental toolkit for
+ Version: @VERSION@
+ Libs: -L${libdir} -lmx-@MX_API_VERSION@
+ Cflags: -I${includedir}/mx-@MX_API_VERSION@
+-Requires: clutter-1.0
++Requires: clutter-1.0 gdk-pixbuf-2.0
