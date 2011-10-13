@@ -3,28 +3,25 @@
 %bcond_without	apidocs		# do not build and package API docs
 %bcond_without	glade3		# Glade 3 support
 #
-%define		vermaj	1.3
-%define		vermin	1
-
 Summary:	Mx Toolkit
 Summary(pl.UTF-8):	Toolkit widgetów Mx
 Name:		mx
-Version:	%{vermaj}.%{vermin}
-Release:	2
+Version:	1.4.0
+Release:	1
 License:	LGPL v2.1
 Group:		X11/Libraries
-Source0:	http://source.clutter-project.org/sources/mx/%{vermaj}/%{name}-%{version}.tar.xz
-# Source0-md5:	2059af1030a219d495bb78f4e635161c
-URL:		http://www.clutter-project.org/
+Source0:	http://source.clutter-project.org/sources/mx/1.4/%{name}-%{version}.tar.xz
+# Source0-md5:	c9d3cc7458e4f773cb7dafe1a49fe8ba
 Patch0:		gdk-pixbuf.patch
+URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	clutter-devel >= 1.4.0
-# clutter-imcontext-0.1, clutter-gesture
+BuildRequires:	clutter-devel >= 1.8.0
+# TODO: clutter-imcontext-0.1, clutter-gesture
 BuildRequires:	dbus-glib-devel >= 0.82
 BuildRequires:	gettext-devel
 BuildRequires:	gdk-pixbuf2-devel
-BuildRequires:	glib2-devel >= 1:2.26.0
+BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	gobject-introspection-devel >= 0.6.4
 BuildRequires:	gtk+2-devel >= 2:2.20.0
 BuildRequires:	gtk-doc >= 1.14
@@ -36,6 +33,12 @@ BuildRequires:	startup-notification-devel >= 0.9
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.2.0
 BuildRequires:	xz
+Requires:	clutter >= 1.8.0
+Requires:	dbus-glib >= 0.82
+Requires:	glib2 >= 1:2.28.0
+Requires:	gtk+2 >= 2:2.20.0
+Requires:	startup-notification >= 0.9
+Requires:	xorg-lib-libXrandr >= 1.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -57,9 +60,13 @@ Summary:	Header files for mx libraries
 Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek mx
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	clutter-devel >= 1.4.0
+Requires:	clutter-devel >= 1.8.0
+Requires:	dbus-glib-devel >= 0.82
 Requires:	gdk-pixbuf2-devel
+Requires:	glib2-devel >= 1:2.28.0
 Requires:	gtk+2-devel >= 2:2.20.0
+Requires:	startup-notification-devel >= 0.9
+Requires:	xorg-lib-libXrandr-devel >= 1.2.0
 
 %description devel
 Header files for mx libraries.
