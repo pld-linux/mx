@@ -6,13 +6,14 @@
 Summary:	Mx Toolkit
 Summary(pl.UTF-8):	Toolkit widgetów Mx
 Name:		mx
-Version:	1.4.6
-Release:	2
+Version:	1.4.7
+Release:	1
 License:	LGPL v2.1
 Group:		X11/Libraries
-Source0:	http://source.clutter-project.org/sources/mx/1.4/%{name}-%{version}.tar.xz
-# Source0-md5:	92ec1bb29cc878932857de737b111827
+Source0:	https://github.com/downloads/clutter-project/mx/%{name}-%{version}.tar.xz
+# Source0-md5:	19b1e4918a5ae6d014fc0dab2bb3d0a1
 Patch0:		gdk-pixbuf.patch
+Patch1:		0001-Replace-GL-data-types-with-equivalent-glib-types.patch
 URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11
@@ -89,6 +90,7 @@ Dokumentacja API bibliotek mx.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
