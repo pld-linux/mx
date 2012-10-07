@@ -2,6 +2,8 @@
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
 %bcond_without	glade3		# Glade 3 support
+%bcond_without	imcontext	# Clutter input method support
+%bcond_without	gesture		# Clutter Gesture support
 #
 Summary:	Mx Toolkit
 Summary(pl.UTF-8):	Toolkit widgetów Mx
@@ -18,7 +20,8 @@ URL:		http://www.clutter-project.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	clutter-devel >= 1.8.0
-# TODO: clutter-imcontext-0.1, clutter-gesture
+%{?with_gesture:BuildRequires:	clutter-gesture-devel}
+%{?with_imcontext:BuildRequires:	clutter-imcontext-devel >= 0.1}
 BuildRequires:	dbus-glib-devel >= 0.82
 BuildRequires:	gettext-devel
 BuildRequires:	gdk-pixbuf2-devel
@@ -101,6 +104,8 @@ Dokumentacja API bibliotek mx.
 %configure \
 	%{__enable_disable apidocs gtk-doc} \
 	--disable-silent-rules \
+	--with-clutter-gesture%{!?with_gesture:=no} \
+	--with-clutter-imcontext%{!?with_imcontext:=no} \
 	%{?with_glade3:--with-glade} \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
