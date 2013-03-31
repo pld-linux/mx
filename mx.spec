@@ -9,7 +9,7 @@ Summary:	Mx Toolkit
 Summary(pl.UTF-8):	Toolkit widgetów Mx
 Name:		mx
 Version:	1.4.7
-Release:	2
+Release:	3
 License:	LGPL v2.1
 Group:		X11/Libraries
 Source0:	https://github.com/downloads/clutter-project/mx/%{name}-%{version}.tar.xz
