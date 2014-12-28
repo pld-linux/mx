@@ -23,7 +23,7 @@ BuildRequires:	clutter-devel >= 1.8.0
 %{?with_gesture:BuildRequires:	clutter-gesture-devel}
 %{?with_imcontext:BuildRequires:	clutter-imcontext-devel >= 0.1}
 BuildRequires:	dbus-glib-devel >= 0.82
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gdk-pixbuf2-devel
 BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	gobject-introspection-devel >= 0.6.4
