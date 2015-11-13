@@ -9,7 +9,7 @@ Summary:	Mx Toolkit
 Summary(pl.UTF-8):	Toolkit widgetów Mx
 Name:		mx
 Version:	1.4.7
-Release:	6
+Release:	7
 License:	LGPL v2.1
 Group:		X11/Libraries
 Source0:	https://github.com/downloads/clutter-project/mx/%{name}-%{version}.tar.xz
@@ -90,6 +90,19 @@ API documentation for mx libraries.
 %description apidocs -l pl.UTF-8
 Dokumentacja API bibliotek mx.
 
+%package -n glade3-mx
+Summary:	MX catalog file for Glade3
+Summary(pl.UTF-8):	Plik katalogu MX dla Glade3
+Group:		Development/Tools
+Requires:	%{name}-devel = %{version}-%{release}
+Requires: 	glade3 >= 3.4.5
+
+%description -n glade3-mx
+MX catalog file for Glade3.
+
+%description -n glade3-mx -l pl.UTF-8
+Plik katalogu MX dla Glade3.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -153,4 +166,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_gtkdocdir}/mx-gtk
 %{_gtkdocdir}/mx
+%endif
+
+%if %{with glade3}
+%files -n glade3-mx
+%defattr(644,root,root,755)
+%{_datadir}/glade3/catalogs/mx-gtk-catalog.xml
 %endif
