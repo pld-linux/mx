@@ -4,12 +4,12 @@
 %bcond_without	glade3		# Glade 3 support
 %bcond_without	imcontext	# Clutter input method support
 %bcond_without	gesture		# Clutter Gesture support
-#
+
 Summary:	Mx Toolkit
 Summary(pl.UTF-8):	Toolkit widgetów Mx
 Name:		mx
 Version:	1.4.7
-Release:	7
+Release:	8
 License:	LGPL v2.1
 Group:		X11/Libraries
 Source0:	https://github.com/downloads/clutter-project/mx/%{name}-%{version}.tar.xz
@@ -23,8 +23,8 @@ BuildRequires:	clutter-devel >= 1.8.0
 %{?with_gesture:BuildRequires:	clutter-gesture-devel}
 %{?with_imcontext:BuildRequires:	clutter-imcontext-devel >= 0.1}
 BuildRequires:	dbus-glib-devel >= 0.82
-BuildRequires:	gettext-tools
 BuildRequires:	gdk-pixbuf2-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	gobject-introspection-devel >= 0.6.4
 BuildRequires:	gtk+2-devel >= 2:2.20.0
@@ -54,8 +54,8 @@ CSS format file.
 
 %description -l pl.UTF-8
 Mx to toolkit widgetów korzystający z biblioteki Clutter,
-udostępniający zbiór podstawowych elementów interfejsów graficznych,
-w tym przyciski, paski postępu, paski przewijania i inne. Implementuje
+udostępniający zbiór podstawowych elementów interfejsów graficznych, w
+tym przyciski, paski postępu, paski przewijania i inne. Implementuje
 także niektórych standardowych zarządców. Interesującą funkcją jest
 możliwość ustawiania właściwości styli poprzez plik w formacie CSS.
 
@@ -83,6 +83,9 @@ Summary:	mx libraries API documentation
 Summary(pl.UTF-8):	Dokumentacja API bibliotek mx
 Group:		Documentation
 Requires:	gtk-doc-common
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API documentation for mx libraries.
@@ -95,7 +98,7 @@ Summary:	MX catalog file for Glade3
 Summary(pl.UTF-8):	Plik katalogu MX dla Glade3
 Group:		Development/Tools
 Requires:	%{name}-devel = %{version}-%{release}
-Requires: 	glade3 >= 3.4.5
+Requires:	glade3 >= 3.4.5
 
 %description -n glade3-mx
 MX catalog file for Glade3.
