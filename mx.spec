@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
-%bcond_without	glade3		# Glade 3 support
+%bcond_with	glade3		# Glade 3 support
 %bcond_without	imcontext	# Clutter input method support
 %bcond_without	gesture		# Clutter Gesture support
 
@@ -9,7 +9,7 @@ Summary:	Mx Toolkit
 Summary(pl.UTF-8):	Toolkit widgetów Mx
 Name:		mx
 Version:	1.4.7
-Release:	8
+Release:	9
 License:	LGPL v2.1
 Group:		X11/Libraries
 Source0:	https://github.com/downloads/clutter-project/mx/%{name}-%{version}.tar.xz
