@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	apidocs		# do not build and package API docs
+%bcond_without	apidocs		# gtk-doc based API documentation
 %bcond_with	glade3		# Glade 3 support
 %bcond_without	imcontext	# Clutter input method support
 %bcond_without	gesture		# Clutter Gesture support
@@ -9,7 +9,7 @@ Summary:	Mx Toolkit
 Summary(pl.UTF-8):	Toolkit widgetów Mx
 Name:		mx
 Version:	1.4.7
-Release:	9
+Release:	10
 License:	LGPL v2.1
 Group:		X11/Libraries
 Source0:	https://github.com/downloads/clutter-project/mx/%{name}-%{version}.tar.xz
@@ -33,6 +33,7 @@ BuildRequires:	intltool >= 0.35.0
 %{?with_glade3:BuildRequires:	libgladeui-devel >= 3.4.5}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	startup-notification-devel >= 0.9
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libXrandr-devel >= 1.2.0
@@ -71,6 +72,9 @@ Requires:	glib2-devel >= 1:2.28.0
 Requires:	gtk+2-devel >= 2:2.20.0
 Requires:	startup-notification-devel >= 0.9
 Requires:	xorg-lib-libXrandr-devel >= 1.2.0
+%if %{without glade3}
+Obsoletes:	glade3-mx < %{version}-%{release}
+%endif
 
 %description devel
 Header files for mx libraries.
